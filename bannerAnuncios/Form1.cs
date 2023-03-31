@@ -37,7 +37,7 @@ namespace bannerAnuncios
             timer1.Tick += new EventHandler(Timer1_Tick);
             timer1.Start();
             this.Hide();
-            //test
+            
             //string executablePath = "C:\\Program Files\\Volkswagen de Mexico\\BannerAnuncios\\bannerAnuncios.exe";
             // Add the executable to the startup registry key
             //RegistryKey startupKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
