@@ -11,7 +11,9 @@ using System.Runtime.Remoting.Contexts;
 using System.Linq;
 using System.ServiceProcess;
 using System.Threading.Tasks;
-
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+using System.Net.Security;
 
 namespace bannerAnuncios
 {
@@ -71,7 +73,12 @@ namespace bannerAnuncios
                 {
                     serialNumber = mo["SerialNumber"].ToString();
                 }
-                
+
+                ServicePointManager.ServerCertificateValidationCallback = delegate
+              (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) {
+                  return true;
+              };
+
                 string urlFinal = _restServiceUrl + serialNumber;
                 
                 var response = await _httpClient.GetAsync(urlFinal);
