@@ -24,10 +24,10 @@ namespace bannerAnuncios
         
         string username = ConfigurationManager.AppSettings["Username"];
         string password = ConfigurationManager.AppSettings["Password"];
-        int interval = int.Parse(ConfigurationManager.AppSettings["Interval"]);
+        int interval = int.Parse(ConfigurationManager.AppSettings["IntervalQA"]);
         int mensaje = int.Parse(ConfigurationManager.AppSettings["mensaje"]);
         private readonly HttpClient _httpClient = new HttpClient();
-        private readonly string _restServiceUrl = ConfigurationManager.AppSettings["UrlLOCAL"];
+        private readonly string _restServiceUrl = ConfigurationManager.AppSettings["UrlQA"];
         string alerta = ConfigurationManager.AppSettings["Alerta"];
         string error = ConfigurationManager.AppSettings["Error"];
 
